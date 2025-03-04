@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { useRef } from "react";
 import { CheckCircle, Globe, Leaf, Users, Award } from "lucide-react";
-import Link from "next/link";
 
 export default function Home() {
   const containerRef = useRef(null);
