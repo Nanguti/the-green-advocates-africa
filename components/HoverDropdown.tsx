@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -16,14 +16,46 @@ interface HoverDropdownProps {
 
 const HoverDropdown: React.FC<HoverDropdownProps> = ({ label, items }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  // Keyboard accessibility
+  const handleKeyDown = (event: React.KeyboardEvent) => {
+    if (event.key === "Enter" || event.key === " ") {
+      setIsOpen(!isOpen);
+    }
+    if (event.key === "Escape") {
+      setIsOpen(false);
+    }
+  };
 
   return (
     <div
+      ref={dropdownRef}
       className="relative"
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
     >
       <button
+        aria-haspopup="menu"
+        aria-expanded={isOpen}
+        onKeyDown={handleKeyDown}
         className={`
           text-gray-700 dark:text-gray-300 
           hover:text-green-600 
@@ -32,6 +64,9 @@ const HoverDropdown: React.FC<HoverDropdownProps> = ({ label, items }) => {
           items-center 
           transition-colors 
           duration-200
+          focus:outline-none
+          focus:ring-2
+          focus:ring-green-500
           ${isOpen ? "text-green-600" : ""}
         `}
       >
@@ -63,6 +98,7 @@ const HoverDropdown: React.FC<HoverDropdownProps> = ({ label, items }) => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            role="menu"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
@@ -85,11 +121,12 @@ const HoverDropdown: React.FC<HoverDropdownProps> = ({ label, items }) => {
               z-50
             "
           >
-            <div className="py-1">
+            <div className="py-1" role="none">
               {items.map((item, index) => (
                 <Link
                   key={index}
                   href={item.href}
+                  role="menuitem"
                   className="
                     block 
                     px-4 
@@ -101,6 +138,9 @@ const HoverDropdown: React.FC<HoverDropdownProps> = ({ label, items }) => {
                     dark:hover:bg-green-900/20 
                     transition-colors 
                     duration-200
+                    focus:outline-none
+                    focus:bg-green-50
+                    focus:text-green-900
                   "
                 >
                   {item.label}
@@ -114,4 +154,4 @@ const HoverDropdown: React.FC<HoverDropdownProps> = ({ label, items }) => {
   );
 };
 
-export default HoverDropdown;
+export default React.memo(HoverDropdown);
