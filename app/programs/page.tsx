@@ -11,7 +11,6 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import Navbar from "../components/Navbar";
 
 const programs = [
   {
@@ -167,8 +166,6 @@ export default function Programs() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-green-50 to-white dark:from-green-950 dark:to-gray-900">
-      <Navbar />
-
       <main className="container mx-auto px-4 pt-24 pb-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
