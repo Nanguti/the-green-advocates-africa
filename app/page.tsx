@@ -3,16 +3,17 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { CheckCircle, Globe, Leaf, Users, Award } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
   const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end start"],
-  });
+  // const { scrollYProgress } = useScroll({
+  //   target: containerRef,
+  //   offset: ["start start", "end start"],
+  // });
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  // const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  // const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   const activities = [
     {
@@ -62,30 +63,30 @@ export default function Home() {
             </span>
           </div>
           <div className="space-x-6">
-            <a
+            <Link
               href="/"
               className="text-green-700 dark:text-green-400 font-medium hover:text-green-600"
             >
               Home
-            </a>
-            <a
+            </Link>
+            <Link
               href="/programs"
               className="text-gray-700 dark:text-gray-300 hover:text-green-600"
             >
               Programs
-            </a>
-            <a
+            </Link>
+            <Link
               href="/about"
               className="text-gray-700 dark:text-gray-300 hover:text-green-600"
             >
               About
-            </a>
-            <a
+            </Link>
+            <Link
               href="/contact"
               className="bg-green-600 text-white px-4 py-2 rounded-full hover:bg-green-700 transition-colors"
             >
               Contact
-            </a>
+            </Link>
           </div>
         </div>
       </nav>
@@ -203,8 +204,8 @@ export default function Home() {
             Join Our Mission
           </h2>
           <p className="text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto mb-8">
-            Located in Kasarani Sub-County, Clay City Ward, Nairobi, Kenya.
-            We're committed to creating lasting environmental and social impact.
+            Located in Kasarani Sub-County, Clay City Ward, Nairobi, Kenya. We
+            are committed to creating lasting environmental and social impact.
           </p>
           <motion.a
             href="/contact"

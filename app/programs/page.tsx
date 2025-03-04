@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Search, Filter, X } from "lucide-react";
+import { Search, X } from "lucide-react";
 import {
   Card,
   CardHeader,
