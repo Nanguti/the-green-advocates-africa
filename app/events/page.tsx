@@ -70,6 +70,7 @@ const events = {
 
 export default function Events() {
   const [activeTab, setActiveTab] = useState("upcoming");
+  console.log(activeTab);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-green-50 to-white dark:from-green-950 dark:to-gray-900">
