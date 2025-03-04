@@ -10,6 +10,7 @@ import {
   MapPin,
   Leaf,
 } from "lucide-react";
+import Link from "next/link";
 
 export default function Footer() {
   const socialLinks = [
@@ -54,7 +55,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-green-50 dark:bg-gray-900 border-t border-green-100 dark:border-gray-800 mt-16">
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 pt-16 pb-4">
         <div className="grid md:grid-cols-4 gap-8">
           {/* Organization Info */}
           <div>
@@ -93,12 +94,12 @@ export default function Footer() {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <a
+                  <Link
                     href={link.href}
                     className="text-gray-600 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -112,12 +113,12 @@ export default function Footer() {
             <ul className="space-y-3">
               {programCategories.map((category) => (
                 <li key={category}>
-                  <a
+                  <Link
                     href="#"
                     className="text-gray-600 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors"
                   >
                     {category}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
