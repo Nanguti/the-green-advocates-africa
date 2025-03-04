@@ -1,15 +1,19 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/Navbar";
+import Navbar from "@/components/Navbar";
 import Footer from "./components/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const fontSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["200", "300", "400", "600", "700", "800"],
+  variable: "--font-sans",
+});
 
 export const metadata: Metadata = {
   title: "Green Advocates Africa",
   description:
-    "Empowering communities through environmental advocacy and sustainable development",
+    "Environmental advocacy and community development in Nairobi, Kenya",
 };
 
 export default function RootLayout({
@@ -19,7 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${fontSans.variable} font-sans antialiased`}>
         <Navbar />
         {children}
         <Footer />

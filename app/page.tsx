@@ -7,13 +7,6 @@ import Link from "next/link";
 
 export default function Home() {
   const containerRef = useRef(null);
-  // const { scrollYProgress } = useScroll({
-  //   target: containerRef,
-  //   offset: ["start start", "end start"],
-  // });
-
-  // const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  // const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   const activities = [
     {
@@ -45,51 +38,20 @@ export default function Home() {
   return (
     <div
       ref={containerRef}
-      className="bg-gradient-to-br from-green-50 via-white to-blue-50 dark:from-green-950 dark:via-gray-900 dark:to-blue-950 min-h-screen"
+      className="bg-gradient-to-br from-green-50 via-white to-blue-50 dark:from-green-950 dark:via-gray-900 
+      dark:to-blue-950 min-h-screen"
     >
       {/* Animated Background */}
       <div className="fixed inset-0 pointer-events-none opacity-50 dark:opacity-30">
-        <div className="absolute top-0 left-0 w-64 h-64 bg-green-200/50 dark:bg-green-900/30 rounded-full blur-3xl animate-blob"></div>
-        <div className="absolute bottom-0 right-0 w-72 h-72 bg-blue-200/50 dark:bg-blue-900/30 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
+        <div
+          className="absolute top-0 left-0 w-64 h-64 bg-green-200/50 dark:bg-green-900/30 rounded-full blur-3xl 
+        animate-blob"
+        ></div>
+        <div
+          className="absolute bottom-0 right-0 w-72 h-72 bg-blue-200/50 dark:bg-blue-900/30 rounded-full blur-3xl 
+        animate-blob animation-delay-2000"
+        ></div>
       </div>
-
-      {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="flex items-center space-x-2">
-            <Leaf className="text-green-600 w-8 h-8" />
-            <span className="text-xl font-bold text-green-800 dark:text-green-400">
-              Green Advocates Africa
-            </span>
-          </div>
-          <div className="space-x-6">
-            <Link
-              href="/"
-              className="text-green-700 dark:text-green-400 font-medium hover:text-green-600"
-            >
-              Home
-            </Link>
-            <Link
-              href="/programs"
-              className="text-gray-700 dark:text-gray-300 hover:text-green-600"
-            >
-              Programs
-            </Link>
-            <Link
-              href="/about"
-              className="text-gray-700 dark:text-gray-300 hover:text-green-600"
-            >
-              About
-            </Link>
-            <Link
-              href="/contact"
-              className="bg-green-600 text-white px-4 py-2 rounded-full hover:bg-green-700 transition-colors"
-            >
-              Contact
-            </Link>
-          </div>
-        </div>
-      </nav>
 
       {/* Hero Section */}
       <main className="container mx-auto px-4 pt-16 relative">
@@ -100,7 +62,10 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="space-y-6"
           >
-            <h1 className="text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-blue-600 dark:from-green-400 dark:to-blue-400">
+            <h1
+              className="text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-600
+             to-blue-600 dark:from-green-400 dark:to-blue-400"
+            >
               Transforming Communities
             </h1>
             <p className="text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -112,7 +77,8 @@ export default function Home() {
                 href="/programs"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-green-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-700 transition-colors flex items-center space-x-2"
+                className="bg-green-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-700 
+                transition-colors flex items-center space-x-2"
               >
                 <CheckCircle className="w-5 h-5" />
                 <span>Our Programs</span>
@@ -121,7 +87,8 @@ export default function Home() {
                 href="/contact"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="border-2 border-green-600 text-green-600 px-6 py-3 rounded-full font-semibold hover:bg-green-600 hover:text-white transition-colors flex items-center space-x-2"
+                className="border-2 border-green-600 text-green-600 px-6 py-3 rounded-full font-semibold
+                 hover:bg-green-600 hover:text-white transition-colors flex items-center space-x-2"
               >
                 <Users className="w-5 h-5" />
                 <span>Get Involved</span>
@@ -136,7 +103,10 @@ export default function Home() {
             className="relative"
           >
             <div className="absolute -inset-2 bg-green-200/50 dark:bg-green-900/30 rounded-2xl blur-xl"></div>
-            <div className="relative bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-8 border border-green-100 dark:border-green-900">
+            <div
+              className="relative bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-8 border border-green-100
+             dark:border-green-900"
+            >
               <div className="grid grid-cols-2 gap-6">
                 {[
                   { number: "10+", label: "Years Active" },
@@ -211,22 +181,14 @@ export default function Home() {
             href="/contact"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-green-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-green-700 transition-colors inline-flex items-center space-x-2"
+            className="bg-green-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-green-700 transition-colors 
+            inline-flex items-center space-x-2"
           >
             <Users className="w-5 h-5" />
             <span>Connect With Us</span>
           </motion.a>
         </section>
       </main>
-
-      {/* Footer */}
-      <footer className="bg-white dark:bg-gray-900 py-12 mt-16">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-gray-600 dark:text-gray-400">
-            © 2024 Green Advocates Africa. All rights reserved.
-          </p>
-        </div>
-      </footer>
     </div>
   );
 }

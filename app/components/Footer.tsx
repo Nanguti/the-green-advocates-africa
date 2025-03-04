@@ -53,7 +53,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-green-50 dark:bg-gray-900 border-t border-green-100 dark:border-gray-800">
+    <footer className="bg-green-50 dark:bg-gray-900 border-t border-green-100 dark:border-gray-800 mt-16">
       <div className="container mx-auto px-4 py-16">
         <div className="grid md:grid-cols-4 gap-8">
           {/* Organization Info */}
@@ -158,7 +158,7 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="mt-12 pt-8 border-t border-green-100 dark:border-gray-800 text-center">
+        <div className="mt-12 pt-1 border-t border-green-100 dark:border-gray-800 text-center">
           <p className="text-gray-500 dark:text-gray-400">
             © {new Date().getFullYear()} Green Advocates Africa. All Rights
             Reserved.
