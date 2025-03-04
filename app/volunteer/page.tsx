@@ -2,15 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-import {
-  Users,
-  Leaf,
-  Book,
-  Heart,
-  Briefcase,
-  Clock,
-  MapPin,
-} from "lucide-react";
+import { Users, Leaf, Book, Briefcase, Clock, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";

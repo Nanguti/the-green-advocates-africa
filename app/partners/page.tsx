@@ -2,14 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-import {
-  Handshake,
-  Building2,
-  Globe,
-  Users,
-  Target,
-  ArrowRight,
-} from "lucide-react";
+import { Building2, Globe, Users, Target, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
